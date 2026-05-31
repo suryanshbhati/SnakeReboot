@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>SnakeGame - Ek Gaming katha</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="body">
         <div id="scoreBox">Score: 0</div>
         <div id="hiscoreBox">HiScore: 0</div>
         <div id="board"></div>
+        <!-- Touch Controls -->
+        <div id="touch-controls">
+            <button id="btn-up">▲</button>
+            <div id="touch-middle-row">
+                <button id="btn-left">◀</button>
+                <button id="btn-down">▼</button>
+                <button id="btn-right">▶</button>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
-<script src="JS/script.js"></script>
 </html>

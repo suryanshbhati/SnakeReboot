@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.body {
+    background-color: #2d5a1b;
+    background-image: url("bg.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+#scoreBox {
+    font-size: clamp(16px, 3vmin, 28px);
+    font-weight: bold;
+    font-family: "New Tegomin", serif;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.2;
+}
+
+#hiscoreBox {
+    font-size: clamp(16px, 3vmin, 28px);
+    font-weight: bold;
+    font-family: "New Tegomin", serif;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+#board {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    /* Key fix: size the board so score + board + buttons all fit */
+    width: min(90vw, 75vh);
+    height: min(90vw, 75vh);
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    flex-shrink: 0;
+}
+
+.head {
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34);
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+/* Touch Controls */
+#touch-controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}
+
+#touch-middle-row {
+    display: flex;
+    gap: 6px;
+}
+
+#touch-controls button {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+#touch-controls button:active {
+    background: rgba(150, 100, 255, 0.6);
+    transform: scale(0.93);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    #touch-controls {
+        display: none;
+    }
+}
